@@ -1,9 +1,9 @@
 import akka.actor.ActorSystem
-import controllers.{AsyncController, CountController}
+import controllers.{AsyncController, CalculatorController, CountController}
 import org.scalatestplus.play._
 import play.api.test.Helpers._
 import play.api.test.FakeRequest
-import services.Counter
+import services.{Calculator, Counter}
 
 /**
  * Unit tests can run without a full Play application.
@@ -39,5 +39,6 @@ class UnitSpec extends PlaySpec {
     }
 
   }
+
 
 }

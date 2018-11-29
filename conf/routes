@@ -11,3 +11,100 @@ GET     /message                    controllers.AsyncController.message
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.versioned(file)
+
+#==========================================================================================
+#                               TESTING HTTP VERBS
+#------------------------------------------------------------------------------------------
+
+GET     /getRequest                 controllers.HttpVerbsTestController.getRequest
+POST    /postRequest                controllers.HttpVerbsTestController.postRequest
+PUT     /putRequest                 controllers.HttpVerbsTestController.putRequest
+DELETE  /deleteRequest              controllers.HttpVerbsTestController.deleteRequest
+PATCH   /patchRequest               controllers.HttpVerbsTestController.patchRequest
+
+#==========================================================================================
+#                              STATUS REQUEST
+#------------------------------------------------------------------------------------------
+
+GET     /goodResponse               controllers.StatusRequestTestController.goodResponse
+GET     /badResponse                controllers.StatusRequestTestController.badResponse
+GET     /serverErrorResponse        controllers.StatusRequestTestController.serverErrorResponse
+
+
+#==========================================================================================
+#                              PATH PARAMS AND QUERY PARAMS
+#------------------------------------------------------------------------------------------
+
+GET      /sayHi/:name          controllers.StatusRequestTestController.usePathParams(name: String)
+GET      /sayHi/               controllers.StatusRequestTestController.useQueryParams(name: String)
+
+
+#==========================================================================================
+#                              GET HEADERS AND COOKIES
+#------------------------------------------------------------------------------------------
+
+GET      /header/get            controllers.AuthenticationTestController.getHeader
+GET      /cookie/get            controllers.AuthenticationTestController.getCookies
+
+
+
+
+#==========================================================================================
+#                              AUTH WITH FUTURE
+#------------------------------------------------------------------------------------------
+
+GET     /authentication         controllers.AuthenticationTestController.authentication
+
+
+#==========================================================================================
+#                             	AKKA AND ACTORS SYSTEM
+#------------------------------------------------------------------------------------------
+
+GET 	/helloActor				controllers.ActorExampleController.sayHello(name: String)
+GET 	/putString/:something	controllers.ActorExampleController.putSomeString(something: String)
+
+
+#==========================================================================================
+#                              JSON EXAMPLES
+#------------------------------------------------------------------------------------------
+
+GET     /json/jsValue           controllers.JsonTestController.jsValueExample
+GET     /json/jsWrite           controllers.JsonTestController.jsonExampleWrite
+
+
+#==========================================================================================
+#                                 FILES
+#------------------------------------------------------------------------------------------
+
+POST    /upload                 controllers.FileTestController.upload
+GET 	/getFile				controllers.FileTestController.getFile
+
+
+#==========================================================================================
+#                                 WEB SERVICE
+#------------------------------------------------------------------------------------------
+
+GET     /wsGet                  controllers.HomeController.webServiceGet
+
+
+#==========================================================================================
+#                                 SLICK IMPLE EXAMPLE
+#------------------------------------------------------------------------------------------
+
+GET     /getPersons              controllers.PersonController.index
+POST    /addPerson				 controllers.PersonController.add
+
+#==========================================================================================
+#                              CALCULATOR
+#------------------------------------------------------------------------------------------
+
+GET     /sum/:a/and/:b              controllers.CalculatorController.sum(a: Int, b: Int)
+GET     /subtract/:a/and/:b         controllers.CalculatorController.subtract(a: Int, b: Int)
+GET     /mult/:a/and/:b             controllers.CalculatorController.mult(a: Int, b: Int)
+GET     /divide/:a/in/:b            controllers.CalculatorController.divide(a: Integer, b:Integer)
+
+
+
+
+
+

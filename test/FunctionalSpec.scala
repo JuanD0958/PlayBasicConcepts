@@ -43,4 +43,5 @@ class FunctionalSpec extends PlaySpec with GuiceOneAppPerSuite {
     }
 
   }
+
 }
